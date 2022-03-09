@@ -1,0 +1,48 @@
+// 
+// Task.scss
+//
+
+.task-box{
+  border: 1px solid $gray-300;
+  box-shadow: none;
+
+  .team{
+    .team-member{
+      margin-right: 6px;
+    }
+  }
+}
+
+.gu-transit {
+    border: 1px dashed $gray-600 !important;
+    background-color: $gray-200 !important;
+}
+.react-kanban-card-adder-form__title{
+  border: 0px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px;
+}
+.react-kanban-card-adder-form__description{
+  border: 0px;
+  font-family: inherit;
+  font-size: inherit;
+  margin-top: 10px;
+}
+.react-kanban-card-adder-form__button{
+  background-color: rgb(238, 238, 238);
+    border: none;
+    padding: 5px;
+    width: 45%;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+
+input.react-kanban-card-adder-form__title:focus ,input.react-kanban-card-adder-form__description:focus{
+  border: 1px solid rgb(0, 0, 0);
+}
