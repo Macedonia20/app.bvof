@@ -32,9 +32,9 @@ import { withNamespaces } from "react-i18next";
 import { toggleRightSidebar } from "../../store/actions";
 
 //Import logo Images
-import logosmdark from "../../assets/images/logo-icon-qgr.png";
+import logosmdark from "../../assets/images/bvof-preto.png";
 import logodark from "../../assets/images/bvof-preto.png";
-import logosmlight from "../../assets/images/logo-icon-qgr.png";
+import logosmlight from "../../assets/images/bvof-preto.png";
 import logolight from "../../assets/images/bvof-preto.png";
 
 //Import Social Profile Images
