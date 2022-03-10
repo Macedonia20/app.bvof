@@ -1,6 +1,9 @@
 import React, { Component } from "react"
-import { Row, Col, Card, CardBody, Button, Badge, Modal, ModalHeader, ModalBody, ModalFooter, Label, Input } from "reactstrap";
+import { Row, Col, Card, Badge, Container, CardImg, CardHeader, CardBody, CardTitle, CardText } from "reactstrap";
 import { Link } from "react-router-dom";
+
+import imgProtocolos from "../../assets/images/appprotocolos.png";
+import imgDrogas from "../../assets/images/appdrogas.png";
 
 // datatable related plugins
 import BootstrapTable from 'react-bootstrap-table-next';
@@ -24,8 +27,8 @@ class Protocolos extends Component {
     super(props)
     this.state = {
       breadcrumbItems: [
-        { title: "Menu", link: "/dashboard" },
-        { title: "Cadastro", link: "#" },
+        // { title: "Menu", link: "/dashboard" },
+        // { title: "Cadastro", link: "#" },
       ],
       page: 1,
       sizePerPage: 10,
@@ -291,190 +294,31 @@ class Protocolos extends Component {
 
     return (
       <React.Fragment>
-        <ToastContainer />
-        <div className="page-content">
-          <div className="container-fluid">
-            <Breadcrumbs title="Protocolos" breadcrumbItems={this.state.breadcrumbItems} />
+          <div className="page-content">
+              <Container fluid>
 
-            <Row>
-              <Col className="col-12">
-                <Card>
-                  <CardBody>
-                    <PaginationProvider
-                      pagination={paginationFactory(pageOptions)}
-                      keyField='idusuarios'
-                      columns={columns}
-                      data={this.state.productData}
-                    >
-                      {({ paginationProps, paginationTableProps }) => (
-                        <ToolkitProvider
-                          keyField='idusuarios'
-                          columns={columns}
-                          data={this.state.productData}
-                          search
-                        >
-                          {toolkitProps => (
-                            <React.Fragment>
-
-                              <Row className="mb-2">
-                                <Col md="4">
-                                  <div className="search-box me-2 mb-2 d-inline-block">
-                                    <div className="position-relative">
-                                      <Row className="mb-3">
-                                          <Col md={10}>
-                                              <Input id="valorPesquisar" type="text" placeholder="Pesquisar" onChange={() => this.pesquisar()}/>
-                                          </Col>
-                                      </Row>
-                                      <i className="search-box chat-search-box" />
-                                    </div>
-                                  </div>
-                                </Col>
-                                <Col sm="8">
-                                  <div className="text-sm-end">
-                                    <Button
-                                      type="button"
-                                      color="primary"
-                                      className="btn-rounded mb-2 me-2"
-                                      onClick={this.controlarModal}
-                                    >
-                                      Cadastrar
-                                    </Button>
-                                  </div>
-                                </Col>
-                              </Row>
-
-                              <Row>
-                                <Col xl="12">
-                                  <div className="table-responsive">
-                                    <BootstrapTable
-                                      keyField='idusuarios'
-                                      responsive
-                                      bordered={false}
-                                      striped={false}
-                                      defaultSorted={defaultSorted}
-                                      ref={(n) => (this.node = n)}
-                                      classes={
-                                        "table align-middle table-nowrap"
-                                      }
-                                      headerWrapperClasses={"thead-light"}
-                                      {...toolkitProps.baseProps}
-                                      {...paginationTableProps}
-                                    />
-
-                                  </div>
-                                </Col>
-                              </Row>
-
-                              <Row className="align-items-md-center mt-30">
-                                <Col className="inner-custom-pagination d-flex">
-                                  <div className="d-inline">
-                                    <SizePerPageDropdownStandalone
-                                      {...paginationProps}
-                                    />
-                                  </div>
-                                  <div className="text-md-right ms-auto">
-                                    <PaginationListStandalone
-                                      {...paginationProps}
-                                    />
-                                  </div>
-                                </Col>
-                              </Row>
-                            </React.Fragment>
-                          )
-                          }
-                        </ToolkitProvider>
-                      )
-                      }</PaginationProvider>
-                  </CardBody>
-                </Card>
-              </Col>
-            </Row>
+              <Breadcrumbs title="" breadcrumbItems={this.state.breadcrumbItems} />
+              <Row>
+                  {
+                    this.state.productData?.map(item =>
+                      <Col lg={4}> 
+                          <Link to={{ pathname: item.link }} target="_blank">
+                              <Card outline color="primary" className="border">
+                                  <CardHeader className="bg-transparent">
+                                      <h5 className="my-0 text-primary"><i className="mdi mdi-bullseye-arrow me-3"></i>{ item.protocolo }</h5>
+                                  </CardHeader>
+                                  <CardBody>
+                                      <CardTitle className="h4">{ item.doencas }</CardTitle>
+                                      <CardText>Ver mais...</CardText>
+                                  </CardBody>
+                              </Card>
+                          </Link>
+                      </Col>
+                    )
+                  }
+              </Row>
+              </Container> 
           </div>
-        </div>
-        <Modal
-          isOpen={this.state.modal_standard}
-          toggle={this.controlarModal}
-        >
-          <ModalHeader toggle={() => this.setState({ modal_standard: false })}>
-              Cadastro
-          </ModalHeader>
-          <ModalBody>
-            <Row className="mb-3">
-                <Label className="col-md-2 col-form-label">Doenças</Label>
-                <Col md={10}>
-                    <Input id="idItem" type="text" style={{ display: 'none' }}/>
-                    <Input id="doencas" type="text"/>
-                </Col>
-            </Row>
-            <Row className="mb-3">
-                <Label className="col-md-2 col-form-label">Protocolo</Label>
-                <Col md={10}>
-                    <Input id="protocolo" type="text"/>
-                </Col>
-            </Row>
-            <Row className="mb-3">
-                <Label className="col-md-2 col-form-label">Link</Label>
-                <Col md={10}>
-                    <Input id="link" type="text"/>
-                </Col>
-            </Row>
-            <Row className="mb-3">
-                <Label className="col-md-2 col-form-label">Ativo</Label>
-                <Col md={10}>
-                    <select id="ativo" className="form-control">
-                        <option value="1">Ativo</option>
-                        <option value="0">Inativo</option>
-                    </select>
-                </Col>
-            </Row>
-          </ModalBody>
-          <ModalFooter>
-            <Button
-              type="button"
-              onClick={this.controlarModal}
-              color="light"
-              className="waves-effect"
-            >
-              Fechar
-          </Button>
-            <Button
-              type="button"
-              color="primary" className="waves-effect waves-light"
-              onClick={() => this.cadastrarOuEditar()}
-            >
-              Salvar
-          </Button>
-          </ModalFooter>
-        </Modal>
-        <Modal
-          isOpen={this.state.modal_apagar}
-          toggle={this.controlarModalApagar}
-        >
-          <ModalHeader toggle={() => this.setState({ modal_apagar: false })}>
-              Apagar Item
-          </ModalHeader>
-          <ModalBody>
-            <Input id="idApagar" type="text" style={{ display: 'none' }}/>
-            <p id="nomeApagar">Você tem certeza que deseja apagar, esta ação é irreversível.</p>
-          </ModalBody>
-          <ModalFooter>
-            <Button
-              type="button"
-              onClick={this.controlarModalApagar}
-              color="light"
-              className="waves-effect"
-            >
-              Fechar
-          </Button>
-            <Button
-              type="button"
-              color="danger" className="waves-effect waves-light"
-              onClick={() => this.apagarPermanentemente()}
-            >
-              Apagar permanentemente 
-          </Button>
-          </ModalFooter>
-        </Modal>
       </React.Fragment>
     )
   }

@@ -98,26 +98,19 @@ class SidebarContent extends Component {
                                 <span className="ms-1">Menu</span>
                             </Link>
                         </li>
-
-                        <li>
-                            <Link to="/usuarios">
-                                <i className="ri-file-user-fill"></i>
-                                <span className="ms-1">Usuários</span>
-                            </Link>
-                        </li>
                         <li>
                             <Link to="/protocolos">
                                 <i className="ri-list-check-2"></i>
                                 <span className="ms-1">Protocolos</span>
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to="/Drogas">
                                 <i className="ri-hand-heart-fill"></i>
                                 <span className="ms-1">Drogas</span>
                             </Link>
-                        </li>
-                        <li>
+                        </li> */}
+                        {/* <li>
                             <Link to="/procedimentos">
                                 <i className="ri-file-list-2-line"></i>
                                 <span className="ms-1">Procedimentos</span>
@@ -128,7 +121,7 @@ class SidebarContent extends Component {
                                 <i className="ri-arrow-left-right-line"></i>
                                 <span className="ms-1">Suporte transfusional</span>
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </React.Fragment>
