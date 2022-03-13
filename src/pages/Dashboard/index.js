@@ -35,13 +35,13 @@ class Dashboard extends Component {
                         <Col mg={6} xl={3}>
                             <Card style={{ borderRadius: '25px' }}>
                                 <Link 
-                                    to="/protocolos"
+                                    to="/protocolos-doencas"
                                 >
                                     <CardImg top className="img-fluid" src={imgProtocolos} alt="Protocolos" style={{ borderRadius: '25px' }}/>
                                 </Link>
                             </Card>
                         </Col>
-                        {/* <Col mg={6} xl={3}>
+                        <Col mg={6} xl={3}>
                             <Card style={{ borderRadius: '25px' }}>
                                 <Link 
                                     to="/drogas"
@@ -49,7 +49,7 @@ class Dashboard extends Component {
                                     <CardImg top className="img-fluid" src={imgDrogas} alt="Drogas" style={{ borderRadius: '25px' }}/>
                                 </Link>
                             </Card>
-                        </Col> */}
+                        </Col>
                     </Row>
                     </Container> 
                 </div>

@@ -33,7 +33,11 @@ import CadastroMembros from "../pages/Authentication/CadastroMembros";
 import Batismo from "../pages/Batismo";
 
 import Protocolos from "../pages/Protocolos";
+import ProtocolosDrogas from "../pages/ProtocolosDrogas";
+
 import Drogas from "../pages/Drogas";
+import DrogasCategorias from "../pages/DrogasCategorias";
+
 import Procedimentos from "../pages/Procedimentos";
 import Suporte from "../pages/Suporte";
 
@@ -221,7 +225,11 @@ const authProtectedRoutes = [
 	{ path: "/atualizacoes", component: Atualizacoes },
 
 	{ path: "/protocolos", component: Protocolos },
+	{ path: "/protocolos-doencas", component: ProtocolosDrogas },
+	
 	{ path: "/drogas", component: Drogas },
+	{ path: "/drogas-categorias", component: DrogasCategorias },
+
 	{ path: "/procedimentos", component: Procedimentos },
 	{ path: "/suporte", component: Suporte },
 

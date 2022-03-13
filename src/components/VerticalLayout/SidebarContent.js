@@ -99,17 +99,17 @@ class SidebarContent extends Component {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/protocolos">
+                            <Link to="/protocolos-doencas">
                                 <i className="ri-list-check-2"></i>
                                 <span className="ms-1">Protocolos</span>
                             </Link>
                         </li>
-                        {/* <li>
-                            <Link to="/Drogas">
+                        <li>
+                            <Link to="/drogas">
                                 <i className="ri-hand-heart-fill"></i>
                                 <span className="ms-1">Drogas</span>
                             </Link>
-                        </li> */}
+                        </li>
                         {/* <li>
                             <Link to="/procedimentos">
                                 <i className="ri-file-list-2-line"></i>
