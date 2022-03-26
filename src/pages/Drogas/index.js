@@ -1,23 +1,11 @@
 import React, { Component } from "react"
-import { Row, Col, Card, CardBody, Container, Badge, CardHeader, CardText } from "reactstrap";
+import { Row, Col, Card, Container, CardHeader } from "reactstrap";
 import { Link } from "react-router-dom";
-
-// datatable related plugins
-import BootstrapTable from 'react-bootstrap-table-next';
-import paginationFactory, {
-  PaginationProvider, PaginationListStandalone,
-  SizePerPageDropdownStandalone
-} from 'react-bootstrap-table2-paginator';
-
-import { ToastContainer, toast } from 'react-toastify';
-
-import ToolkitProvider from 'react-bootstrap-table2-toolkit';
 
 import api from '../../services/api';
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"
-import "./datatables.scss"
 
 class Drogas extends Component {
   constructor(props) {
@@ -89,13 +77,10 @@ class Drogas extends Component {
                     this.state.productData?.map(item =>
                       <Col lg={4}> 
                           <Link to={ `/drogas-categorias?q=${item.categorias}` } >
-                              <Card outline color="danger" className="border">
+                              <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
                                   <CardHeader className="bg-transparent">
-                                      <h5 className="my-0 text-danger"><i className="mdi mdi-bullseye-arrow me-3"></i>{ item.categorias }</h5>
+                                      <h5 style={{ padding: '25px', color: '#4aa3ff' }}>{ item.categorias }</h5>
                                   </CardHeader>
-                                  <CardBody>
-                                      <CardText className="my-0 text-danger">Ver drogas...</CardText>
-                                  </CardBody>
                               </Card>
                           </Link>
                       </Col>

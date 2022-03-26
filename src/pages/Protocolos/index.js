@@ -1,12 +1,11 @@
 import React, { Component } from "react"
-import { Row, Col, Card, Container, CardHeader, CardBody, CardTitle, CardText } from "reactstrap";
+import { Row, Col, Card, Container, CardHeader } from "reactstrap";
 import { Link } from "react-router-dom";
 
 import api from '../../services/api';
 
 //Import Breadcrumb
-import Breadcrumbs from "../../components/Common/Breadcrumb"
-import "./datatables.scss"
+import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 class Protocolos extends Component {
   constructor(props) {
@@ -70,14 +69,10 @@ class Protocolos extends Component {
                     this.state.productData?.map(item =>
                       <Col lg={4}> 
                           <Link to={{ pathname: item.link }} target="_blank">
-                              <Card outline color="primary" className="border">
+                              <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
                                   <CardHeader className="bg-transparent">
-                                      <h5 className="my-0 text-primary"><i className="mdi mdi-bullseye-arrow me-3"></i>{ item.protocolo }</h5>
+                                      <h5 style={{ padding: '25px', color: '#4aa3ff' }}>{ item.protocolo }</h5>
                                   </CardHeader>
-                                  <CardBody>
-                                      <CardTitle className="h4">{ item.doencas }</CardTitle>
-                                      <CardText>Ver documento...</CardText>
-                                  </CardBody>
                               </Card>
                           </Link>
                       </Col>

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Row, Col, Card, Container, CardHeader, CardBody, CardText } from "reactstrap";
+import { Row, Col, Card, Container, CardHeader } from "reactstrap";
 import { Link } from "react-router-dom";
 
 import api from '../../services/api';
@@ -66,13 +66,10 @@ class ProtocolosDrogas extends Component {
                     this.state.productData?.map(item =>
                       <Col lg={4}> 
                           <Link to={ `/protocolos?q=${item.doencas}` } >
-                              <Card outline color="danger" className="border">
+                              <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
                                   <CardHeader className="bg-transparent">
-                                      <h5 className="my-0 text-danger"><i className="mdi mdi-bullseye-arrow me-3"></i>{ item.doencas }</h5>
+                                      <h5 style={{ padding: '25px', color: '#4aa3ff' }}>{ item.doencas }</h5>
                                   </CardHeader>
-                                  <CardBody>
-                                      <CardText className="my-0 text-danger">Ver protocolos...</CardText>
-                                  </CardBody>
                               </Card>
                           </Link>
                       </Col>

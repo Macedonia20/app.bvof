@@ -1,11 +1,11 @@
 import React, { Component } from "react"
-import { Row, Col, Card, CardBody, Container, CardTitle, CardHeader, Modal, Button, ModalHeader, ModalBody, ModalFooter, Label, Input } from "reactstrap";
+import { Row, Col, Card, Container, CardHeader, Modal, Button, ModalHeader, ModalBody, ModalFooter, Label, Input } from "reactstrap";
 
 import api from '../../services/api';
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"
-import "./datatables.scss"
+import { Link } from "react-router-dom";
 
 class DrogasCategorias extends Component {
   constructor(props) {
@@ -21,7 +21,28 @@ class DrogasCategorias extends Component {
       visible: false,
       modal_standard: false,
       modal_apagar: false,
-      filtro: ''
+      filtro: '',
+      categorias: '',
+      nome: '',
+      descricao: '',
+      nome_comercial: '',
+      categoria: '',
+      classificacao: '',
+      mecanismo_acao: '',
+      distribuicao: '',
+      penetracao: '',
+      infusao: '',
+      metabolizacao: '',
+      excrecao: '',
+      meia_vida: '',
+      contraindicacao: '',
+      carcinogenese: '',
+      impacto: '',
+      principais: '',
+      tratamento: '',
+      interacao: '',
+      consideracoes: '',
+      hidratacao: '',
     }
 
     this.controlarModal = this.controlarModal.bind(this);
@@ -79,27 +100,27 @@ class DrogasCategorias extends Component {
 
       setTimeout(() => {
         this.setValueId('idItem', idItem);
-        this.setValueId('nome', data.nome);
-        this.setValueId('descricao', data.descricao);
-        this.setValueId('categorias', data.categorias);
-        this.setValueId('nome_comercial', data.nome_comercial);
-        this.setValueId('categoria', data.categoria);
-        this.setValueId('classificacao', data.classificacao);
-        this.setValueId('mecanismo_acao', data.mecanismo_acao);
-        this.setValueId('distribuicao', data.distribuicao);
-        this.setValueId('penetracao', data.penetracao);
-        this.setValueId('infusao', data.infusao);
-        this.setValueId('metabolizacao', data.metabolizacao);
-        this.setValueId('excrecao', data.excrecao);
-        this.setValueId('meia_vida', data.meia_vida);
-        this.setValueId('contraindicacao', data.contraindicacao);
-        this.setValueId('carcinogenese', data.carcinogenese);
-        this.setValueId('impacto', data.impacto);
-        this.setValueId('principais', data.principais);
-        this.setValueId('tratamento', data.tratamento);
-        this.setValueId('interacao', data.interacao);
-        this.setValueId('consideracoes', data.consideracoes);
-        this.setValueId('hidratacao', data.hidratacao);
+        this.setState({ nome: data.nome });
+        this.setState({ descricao: data.descricao });
+        this.setState({ categorias: data.categorias });
+        this.setState({ nome_comercial: data.nome_comercial });
+        this.setState({ categoria: data.categoria });
+        this.setState({ classificacao: data.classificacao });
+        this.setState({ mecanismo_acao: data.mecanismo_acao });
+        this.setState({ distribuicao: data.distribuicao });
+        this.setState({ penetracao: data.penetracao });
+        this.setState({ infusao: data.infusao });
+        this.setState({ metabolizacao: data.metabolizacao });
+        this.setState({ excrecao: data.excrecao });
+        this.setState({ meia_vida: data.meia_vida });
+        this.setState({ contraindicacao: data.contraindicacao });
+        this.setState({ carcinogenese: data.carcinogenese });
+        this.setState({ impacto: data.impacto });
+        this.setState({ principais: data.principais });
+        this.setState({ tratamento: data.tratamento });
+        this.setState({ interacao: data.interacao });
+        this.setState({ consideracoes: data.consideracoes });
+        this.setState({ hidratacao: data.hidratacao });
       }, 500);
     });
 
@@ -125,23 +146,13 @@ class DrogasCategorias extends Component {
                   {
                     this.state.productData?.map(item =>
                       <Col lg={4}>
-                          <Card outline color="primary" className="border">
-                              <CardHeader className="bg-transparent">
-                                  <h5 className="my-0 text-primary"><i className="mdi mdi-bullseye-arrow me-3"></i>{ item.nome }</h5>
-                              </CardHeader>
-                              <CardBody>
-                                  <CardTitle className="text-primary">{ item.categoria }</CardTitle>
-                                  <div className="d-grid mb-3">
-                                      <Button
-                                        color="primary"
-                                        className="btn btn-primary btn-lg btn-block "
-                                        onClick={() => this.controlarModalEdicao(item.iddrogas)}
-                                      >
-                                        Ver detalhes...
-                                      </Button>
-                                  </div>
-                              </CardBody>
-                          </Card>
+                          <Link to="#" onClick={() => this.controlarModalEdicao(item.iddrogas)}>
+                              <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
+                                  <CardHeader className="bg-transparent">
+                                      <h5 style={{ padding: '25px', color: '#4aa3ff' }}>{ item.nome }</h5>
+                                  </CardHeader>
+                              </Card>
+                          </Link>
                       </Col>
                     )
                   }
@@ -154,135 +165,72 @@ class DrogasCategorias extends Component {
             toggle={this.controlarModal}
           >
             <ModalHeader toggle={() => this.setState({ modal_standard: false })}>
-                Cadastro
+                Especificação
             </ModalHeader>
             <ModalBody>
               <Row className="mb-3">
-                  <Label className="form-label">Categorias</Label>
-                  <Col md={12}>
-                      <Input id="categorias" type="text" disabled/>
-                  </Col>
+                  <Label className="form-label">Categorias: <span style={{ fontWeight: 300 }}>{this.state.categorias}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Nome</Label>
-                  <Col md={12}>
-                      <Input id="idItem" type="text" style={{ display: 'none' }}/>
-                      <Input id="nome" type="text" disabled/>
-                  </Col>  
+                  <Label className="form-label">Nome: <span style={{ fontWeight: 300 }}>{this.state.nome}</span></Label>
+                  <Input id="idItem" type="text" style={{ display: 'none' }}/>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Nome Comercial</Label>
-                  <Col md={12}>
-                      <Input id="nome_comercial" type="text" disabled/>
-                  </Col>
+                  <Label className="form-label">Nome Comercial: <span style={{ fontWeight: 300 }}>{this.state.nome_comercial}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Categoria</Label>
-                  <Col md={12}>
-                      <Input id="categoria" type="text" disabled/>
-                  </Col>
+                  <Label className="form-label">Categoria: <span style={{ fontWeight: 300 }}>{this.state.categoria}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Classificação</Label>
-                  <Col md={12}>
-                      <Input id="classificacao" type="text" disabled/>
-                  </Col>
+                  <Label className="form-label">Classificação: <span style={{ fontWeight: 300 }}>{this.state.classificacao}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Mecanismo de ação</Label>
-                  <Col md={12}>
-                      <Input id="mecanismo_acao" type="textarea" disabled/>
-                  </Col>
+                  <Label className="form-label">Mecanismo de ação: <span style={{ fontWeight: 300 }}>{this.state.mecanismo_acao}</span></Label> 
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Distribuição</Label>
-                  <Col md={12}>
-                      <Input id="distribuicao" type="text" disabled/>
-                  </Col>
+                  <Label className="form-label">Distribuição: <span style={{ fontWeight: 300 }}>{this.state.distribuicao}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Penetração em SNC</Label>
-                  <Col md={12}>
-                      <Input id="penetracao" type="text" disabled/>
-                  </Col>
+                  <Label className="form-label">Penetração em SNC: <span style={{ fontWeight: 300 }}>{this.state.penetracao}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Via de infusão</Label>
-                  <Col md={12}>
-                      <Input id="infusao" type="text" disabled/>
-                  </Col>
+                  <Label className="form-label">Via de infusão: <span style={{ fontWeight: 300 }}>{this.state.infusao}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Metabolização</Label>
-                  <Col md={12}>
-                      <Input id="metabolizacao" type="text" disabled/>
-                  </Col>
+                  <Label className="form-label">Metabolização: <span style={{ fontWeight: 300 }}>{this.state.metabolizacao}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Excreção</Label>
-                  <Col md={12}>
-                      <Input id="excrecao" type="text" disabled/>
-                  </Col>
+                  <Label className="form-label">Excreção: <span style={{ fontWeight: 300 }}>{this.state.excrecao}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Meia vida</Label>
-                  <Col md={12}>
-                      <Input id="meia_vida" type="textarea" disabled/>
-                  </Col>
+                  <Label className="form-label">Meia vida: <span style={{ fontWeight: 300 }}>{this.state.meia_vida}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Contraindicação</Label>
-                  <Col md={12}>
-                      <Input id="contraindicacao" type="textarea" disabled/>
-                  </Col>
+                  <Label className="form-label">Contraindicação: <span style={{ fontWeight: 300 }}>{this.state.contraindicacao}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Carcinogênese</Label>
-                  <Col md={12}>
-                      <Input id="carcinogenese" type="textarea" disabled/>
-                  </Col>
+                  <Label className="form-label">Carcinogênese: <span style={{ fontWeight: 300 }}>{this.state.carcinogenese}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Impacto na fertilidade</Label>
-                  <Col md={12}>
-                      <Input id="impacto" type="textarea" disabled/>
-                  </Col>
+                  <Label className="form-label">Impacto na fertilidade: <span style={{ fontWeight: 300 }}>{this.state.impacto}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Principais efeitos adversos</Label>
-                  <Col md={12}>
-                      <Input id="principais" type="textarea" disabled/>
-                  </Col>
+                  <Label className="form-label">Principais efeitos adversos: <span style={{ fontWeight: 300 }}>{this.state.principais}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Tratamento da toxicidade</Label>
-                  <Col md={12}>
-                      <Input id="tratamento" type="textarea" disabled/>
-                  </Col>
+                  <Label className="form-label">Tratamento da toxicidade: <span style={{ fontWeight: 300 }}>{this.state.tratamento}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Interação</Label>
-                  <Col md={12}>
-                      <Input id="interacao" type="textarea" disabled/>
-                  </Col>
+                  <Label className="form-label">Interação: <span style={{ fontWeight: 300 }}>{this.state.interacao}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Considerações especiais</Label>
-                  <Col md={12}>
-                      <Input id="consideracoes" type="textarea" disabled/>
-                  </Col>
+                  <Label className="form-label">Considerações especiais: <span style={{ fontWeight: 300 }}>{this.state.consideracoes}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Hidratação</Label>
-                  <Col md={12}>
-                      <Input id="hidratacao" type="textarea" disabled/>
-                  </Col>
+                  <Label className="form-label">Hidratação: <span style={{ fontWeight: 300 }}>{this.state.hidratacao}</span></Label>
               </Row>
               <Row className="mb-3">
-                  <Label className="form-label">Descrição</Label>
-                  <Col md={12}>
-                      <Input id="descricao" type="textarea" disabled/>
-                  </Col>
+                  <Label className="form-label">Descrição: <span style={{ fontWeight: 300 }}>{this.state.descricao}</span></Label>
               </Row>
             </ModalBody>
             <ModalFooter>
