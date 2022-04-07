@@ -28,6 +28,7 @@ class DrogasCategorias extends Component {
       nome_comercial: '',
       categoria: '',
       classificacao: '',
+      dose: '',
       mecanismo_acao: '',
       distribuicao: '',
       penetracao: '',
@@ -106,6 +107,7 @@ class DrogasCategorias extends Component {
         this.setState({ nome_comercial: data.nome_comercial });
         this.setState({ categoria: data.categoria });
         this.setState({ classificacao: data.classificacao });
+        this.setState({ dose: data.dose });
         this.setState({ mecanismo_acao: data.mecanismo_acao });
         this.setState({ distribuicao: data.distribuicao });
         this.setState({ penetracao: data.penetracao });
@@ -124,6 +126,10 @@ class DrogasCategorias extends Component {
       }, 500);
     });
 
+  }
+
+  format(text) {
+    return text.split('\n').map(str => <p>{str}</p>);
   }
 
   componentDidMount() {
@@ -174,43 +180,49 @@ class DrogasCategorias extends Component {
               
               {this.state.nome_comercial ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Nome Comercial: <span style={{ fontWeight: 300 }}>{this.state.nome_comercial}</span></Label>
+                  <Label className="form-label">Nome Comercial: <span style={{ fontWeight: 300 }}>{this.format(this.state.nome_comercial)}</span></Label>
                 </Row>
               </>) : (<></>)}
               
               {this.state.categoria ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Categoria: <span style={{ fontWeight: 300 }}>{this.state.categoria}</span></Label>
+                  <Label className="form-label">Categoria: <span style={{ fontWeight: 300 }}>{this.format(this.state.categoria)}</span></Label>
                 </Row>
               </>) : (<></>)}
               
               {this.state.classificacao ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Classificação: <span style={{ fontWeight: 300 }}>{this.state.classificacao}</span></Label>
+                  <Label className="form-label">Classificação: <span style={{ fontWeight: 300 }}>{this.format(this.state.classificacao)}</span></Label>
+                </Row>
+              </>) : (<></>)}
+
+              {this.state.dose ? (<>
+                <Row className="mb-3">
+                  <Label className="form-label">Dose: <span style={{ fontWeight: 300 }}>{this.format(this.state.dose)}</span></Label>
                 </Row>
               </>) : (<></>)}
 
               {this.state.mecanismo_acao ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Mecanismo de ação: <span style={{ fontWeight: 300 }}>{this.state.mecanismo_acao}</span></Label>
+                  <Label className="form-label">Mecanismo de ação: <span style={{ fontWeight: 300 }}>{this.format(this.state.mecanismo_acao)}</span></Label>
                 </Row>
               </>) : (<></>)}
               
               {this.state.distribuicao ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Distribuição: <span style={{ fontWeight: 300 }}>{this.state.distribuicao}</span></Label>
+                  <Label className="form-label">Distribuição: <span style={{ fontWeight: 300 }}>{this.format(this.state.distribuicao)}</span></Label>
                 </Row>
               </>) : (<></>)}
 
               {this.state.penetracao ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Penetração em SNC: <span style={{ fontWeight: 300 }}>{this.state.penetracao}</span></Label>
+                  <Label className="form-label">Penetração em SNC: <span style={{ fontWeight: 300 }}>{this.format(this.state.penetracao)}</span></Label>
                 </Row>
               </>) : (<></>)}
               
               {this.state.infusao ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Via de infusão: <span style={{ fontWeight: 300 }}>{this.state.infusao}</span></Label>
+                  <Label className="form-label">Via de infusão: <span style={{ fontWeight: 300 }}>{this.format(this.state.infusao)}</span></Label>
                 </Row>
               </>) : (<></>)}
               
@@ -222,61 +234,61 @@ class DrogasCategorias extends Component {
               
               {this.state.excrecao ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Excreção: <span style={{ fontWeight: 300 }}>{this.state.excrecao}</span></Label>
+                  <Label className="form-label">Excreção: <span style={{ fontWeight: 300 }}>{this.format(this.state.excrecao)}</span></Label>
                 </Row>
               </>) : (<></>)}
               
               {this.state.meia_vida ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Meia vida: <span style={{ fontWeight: 300 }}>{this.state.meia_vida}</span></Label>
+                  <Label className="form-label">Meia vida: <span style={{ fontWeight: 300 }}>{this.format(this.state.meia_vida)}</span></Label>
                 </Row>
               </>) : (<></>)}
               
               {this.state.contraindicacao ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Contraindicação: <span style={{ fontWeight: 300 }}>{this.state.contraindicacao}</span></Label>
+                  <Label className="form-label">Contraindicação: <span style={{ fontWeight: 300 }}>{this.format(this.state.contraindicacao)}</span></Label>
                 </Row>
               </>) : (<></>)}
               
               {this.state.carcinogenese ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Carcinogênese: <span style={{ fontWeight: 300 }}>{this.state.carcinogenese}</span></Label>
+                  <Label className="form-label">Carcinogênese: <span style={{ fontWeight: 300 }}>{this.format(this.state.carcinogenese)}</span></Label>
                 </Row>
               </>) : (<></>)}
               
               {this.state.impacto ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Impacto na fertilidade: <span style={{ fontWeight: 300 }}>{this.state.impacto}</span></Label>
+                  <Label className="form-label">Impacto na fertilidade: <span style={{ fontWeight: 300 }}>{this.format(this.state.impacto)}</span></Label>
                 </Row>
               </>) : (<></>)}
               
               {this.state.principais ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Principais efeitos adversos: <span style={{ fontWeight: 300 }}>{this.state.principais}</span></Label>
+                  <Label className="form-label">Principais efeitos adversos: <span style={{ fontWeight: 300 }}>{this.format(this.state.principais)}</span></Label>
                 </Row>
               </>) : (<></>)}
               
               {this.state.tratamento ? (<>
                     <Row className="mb-3">
-                      <Label className="form-label">Tratamento da toxicidade: <span style={{ fontWeight: 300 }}>{this.state.tratamento}</span></Label>
+                      <Label className="form-label">Tratamento da toxicidade: <span style={{ fontWeight: 300 }}>{this.format(this.state.tratamento)}</span></Label>
                     </Row>
               </>) : (<></>)}
 
               {this.state.interacao ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Interação: <span style={{ fontWeight: 300 }}>{this.state.interacao}</span></Label>
+                  <Label className="form-label">Interação: <span style={{ fontWeight: 300 }}>{this.format(this.state.interacao)}</span></Label>
                 </Row>
               </>) : (<></>)}
 
               {this.state.consideracoes ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Considerações especiais: <span style={{ fontWeight: 300 }}>{this.state.consideracoes}</span></Label>
+                  <Label className="form-label">Considerações especiais: <span style={{ fontWeight: 300 }}>{this.format(this.state.consideracoes)}</span></Label>
                 </Row>
               </>) : (<></>)}
 
               {this.state.hidratacao ? (<>
                 <Row className="mb-3">
-                  <Label className="form-label">Hidratação: <span style={{ fontWeight: 300 }}>{this.state.hidratacao}</span></Label>
+                  <Label className="form-label">Hidratação: <span style={{ fontWeight: 300 }}>{this.format(this.state.hidratacao)}</span></Label>
                 </Row>
               </>) : (<></>)}
               
