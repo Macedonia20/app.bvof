@@ -41,6 +41,14 @@ import DrogasCategorias from "../pages/DrogasCategorias";
 import Procedimentos from "../pages/Procedimentos";
 import Suporte from "../pages/Suporte";
 
+import Hemocomponentes from "../pages/Hemocomponentes";
+
+import CuidadosEspeciais from "../pages/CuidadosEspeciais";
+
+import ReacoesTransfusionais from "../pages/ReacoesTransfusionais";
+
+
+
 
 import Atualizacoes from "../pages/Atualizacoes"
 
@@ -232,6 +240,16 @@ const authProtectedRoutes = [
 
 	{ path: "/procedimentos", component: Procedimentos },
 	{ path: "/suporte", component: Suporte },
+
+	{ path: "/hemocomponentes", component: Hemocomponentes },
+
+	{ path: "/cuidados-especiais", component: CuidadosEspeciais },
+
+	{ path: "/reacoes-transfusional", component: ReacoesTransfusionais },
+
+	 
+	
+
 
 
 	// this route should be at the end of all other routes

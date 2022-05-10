@@ -110,6 +110,32 @@ class SidebarContent extends Component {
                                 <span className="ms-1">Drogas</span>
                             </Link>
                         </li>
+                        <li>
+                            <Link className="has-arrow waves-effect" to="#">
+                                <i className="ri-hand-heart-fill"></i>
+                                <span className="ms-1">Hemoterapia</span>
+                            </Link>
+                            <ul className="sub-menu mm-collapse">
+                                <li>
+                                    <Link to="/hemocomponentes">
+                                        <i className="ri-hand-heart-fill"></i>
+                                        <span className="ms-1">Hemocomponentes</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/cuidados-especiais">
+                                        <i className="ri-hand-heart-fill"></i>
+                                        <span className="ms-1">Cuidados Especiais</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/Reacoes-Transfusional">
+                                        <i className="ri-hand-heart-fill"></i>
+                                        <span className="ms-1">Reações Transfusional</span>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </li>
                         {/* <li>
                             <Link to="/procedimentos">
                                 <i className="ri-file-list-2-line"></i>
