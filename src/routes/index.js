@@ -12,25 +12,17 @@ import AuthLockScreen from "../pages/Authentication/AuthLockScreen";
 // Dashboard
 import Dashboard from "../pages/Dashboard/index";
 
-import Eventos from "../pages/Eventos/index";
-
-import Lives from "../pages/Lives/index";
-
-import MensagensPUTZ from "../pages/MensagensPUTZ/index";
-
-import Missoes from "../pages/Missoes/index";
-
-import Niveis from "../pages/Niveis/index";
-
-import Comandos from "../pages/Comandos/index";
-
-import CanalDenuncia from "../pages/CanalDenuncia/index";
-
 import Perfil from "../pages/Perfil/index";
 
 import CadastroMembros from "../pages/Authentication/CadastroMembros";
 
-import Batismo from "../pages/Batismo";
+import Hemoterapia from "../pages/Hemoterapia";
+import HemoterapiaOpcoes from "../pages/HemoterapiaOpcoes";
+
+import HemoterapiaColeta from "../pages/HemoterapiaColeta";
+import HemoterapiaCuidados from "../pages/HemoterapiaCuidados";
+import HemoterapiaHemocomponentes from "../pages/HemoterapiaHemocomponentes";
+import HemoterapiaReacoes from "../pages/HemoterapiaReacoes";
 
 import Protocolos from "../pages/Protocolos";
 import ProtocolosDrogas from "../pages/ProtocolosDrogas";
@@ -38,31 +30,10 @@ import ProtocolosDrogas from "../pages/ProtocolosDrogas";
 import Drogas from "../pages/Drogas";
 import DrogasCategorias from "../pages/DrogasCategorias";
 
+import Parceiros from "../pages/Parceiros";
+
 import Procedimentos from "../pages/Procedimentos";
 import Suporte from "../pages/Suporte";
-
-
-import Atualizacoes from "../pages/Atualizacoes"
-
-//Ecommerce Pages
-import EcommerceProducts from "../pages/Ecommerce/EcommerceProducts/index"
-import EcommerceProductDetail from "../pages/Ecommerce/EcommerceProducts/EcommerceProductDetail"
-import EcommerceOrders from "../pages/Ecommerce/EcommerceOrders/index"
-import EcommerceCustomers from "../pages/Ecommerce/EcommerceCustomers/index"
-import EcommerceCart from "../pages/Ecommerce/EcommerceCart"
-import EcommerceCheckout from "../pages/Ecommerce/EcommerceCheckout"
-import EcommerceShops from "../pages/Ecommerce/EcommerceShops/index"
-import EcommerceAddProduct from "../pages/Ecommerce/EcommerceAddProduct"
-
-//Email
-import EmailInbox from "../pages/Email/email-inbox";
-import EmailRead from "../pages/Email/email-read";
-
-// Charts
-
-// Maps
-import MapsGoogle from "../pages/Maps/MapsGoogle";
-import MapsVector from "../pages/Maps/MapsVector";
 
 //Icons
 import RemixIcons from "../pages/Icons/RemixIcons";
@@ -124,13 +95,7 @@ import Login1 from "../pages/AuthenticationInner/Login";
 import Register1 from "../pages/AuthenticationInner/Register";
 import ForgetPwd1 from "../pages/AuthenticationInner/ForgetPassword";
 
-//Kanban Board
-import KanbanBoard from "../pages/KanbanBoard/index";
-
 const authProtectedRoutes = [
-
-	//Kanban Board
-	{ path: "/kanban-board", component: KanbanBoard },
 
 	// Tables
 	{ path: "/basic-tables", component: BasicTables },
@@ -183,52 +148,25 @@ const authProtectedRoutes = [
 	{ path: "/dripicons", component: DripiIcons },
 	{ path: "/font-awesome-5", component: FontAwesome },
 
-	// Maps
-	{ path: "/google-maps", component: MapsGoogle },
-	{ path: "/vector-maps", component: MapsVector },
-
-	//Email
-	{ path: "/email-inbox", component: EmailInbox },
-	{ path: "/email-read", component: EmailRead },
-
-	//Ecommerce
-	
-	{ path: "/ecommerce-products", component: EcommerceProducts },
-	{ path: "/ecommerce-product-detail/:id", component: EcommerceProductDetail },
-	{ path: "/ecommerce-orders", component: EcommerceOrders },
-	{ path: "/ecommerce-customers", component: EcommerceCustomers },
-	{ path: "/ecommerce-cart", component: EcommerceCart },
-	{ path: "/ecommerce-checkout", component: EcommerceCheckout },
-	{ path: "/ecommerce-shops", component: EcommerceShops },
-	{ path: "/ecommerce-add-product", component: EcommerceAddProduct },  
-
 	{ path: "/dashboard", component: Dashboard },
-
-	{ path: "/eventos", component: Eventos },
-
-	{ path: "/lives", component: Lives },
-
-	{ path: "/mensagens-putz", component: MensagensPUTZ },
-
-	{ path: "/comandos", component: Comandos },
-
-	{ path: "/canal-de-denuncia", component: CanalDenuncia },
 
 	{ path: "/perfil", component: Perfil },
 
-	{ path: "/missoes", component: Missoes },
-
-	{ path: "/niveis", component: Niveis },
-
-	{ path: "/batismo", component: Batismo },
-
-	{ path: "/atualizacoes", component: Atualizacoes },
+	{ path: "/parceiros", component: Parceiros },
 
 	{ path: "/protocolos", component: Protocolos },
 	{ path: "/protocolos-doencas", component: ProtocolosDrogas },
 	
 	{ path: "/drogas", component: Drogas },
 	{ path: "/drogas-categorias", component: DrogasCategorias },
+
+	{ path: "/hemoterapia", component: Hemoterapia },
+	{ path: "/hemoterapia-opcoes", component: HemoterapiaOpcoes },
+
+	{ path: "/hemoterapia-coleta", component: HemoterapiaColeta },
+	{ path: "/hemoterapia-cuidados", component: HemoterapiaCuidados },
+	{ path: "/hemoterapia-hemocomponentes", component: HemoterapiaHemocomponentes },
+	{ path: "/hemoterapia-reacoes", component: HemoterapiaReacoes },
 
 	{ path: "/procedimentos", component: Procedimentos },
 	{ path: "/suporte", component: Suporte },

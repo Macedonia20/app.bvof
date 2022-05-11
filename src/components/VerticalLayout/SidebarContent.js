@@ -94,7 +94,6 @@ class SidebarContent extends Component {
                         <li>
                             <Link to="/dashboard">
                                 <i className="ri-dashboard-line"></i>
-                                {/* <span className="badge rounded-pill bg-success float-end">3</span> */}
                                 <span className="ms-1">Menu</span>
                             </Link>
                         </li>
@@ -108,6 +107,44 @@ class SidebarContent extends Component {
                             <Link to="/drogas">
                                 <i className="ri-hand-heart-fill"></i>
                                 <span className="ms-1">Drogas</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/#" className="has-arrow waves-effect">
+                                <i className="ri-drop-fill"></i>
+                                <span className="ms-1">Hemoterapia</span>
+                            </Link>
+                            <ul className="sub-menu">
+                                <li>
+                                    <Link
+                                        to="/hemoterapia-coleta"
+                                    >
+                                        Coleta de células tronco hematopoéticas
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        to="/hemoterapia-cuidados"
+                                    >
+                                        Cuidados Especiais
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/hemoterapia-hemocomponentes">
+                                        Hemocomponentes
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/hemoterapia-reacoes">
+                                        Reações Transfusionais
+                                    </Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <Link to="/parceiros">
+                                <i className="ri-team-line"></i>
+                                <span className="ms-1">Parceiros</span>
                             </Link>
                         </li>
                         {/* <li>

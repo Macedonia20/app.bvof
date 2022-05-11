@@ -110,6 +110,7 @@
     ]
   },
   "resolutions": {
-    "moment": "2.24.0"
+    "moment": "2.24.0",
+    "react-error-overlay":"6.0.9"
   }
 }
