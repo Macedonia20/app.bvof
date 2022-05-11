@@ -35,6 +35,12 @@ import Parceiros from "../pages/Parceiros";
 import Procedimentos from "../pages/Procedimentos";
 import Suporte from "../pages/Suporte";
 
+import Hemocomponentes from "../pages/Hemocomponentes";
+
+import CuidadosEspeciais from "../pages/CuidadosEspeciais";
+
+import ReacoesTransfusionais from "../pages/ReacoesTransfusionais";
+
 //Icons
 import RemixIcons from "../pages/Icons/RemixIcons";
 import MaterialDesign from "../pages/Icons/MaterialDesign";
@@ -171,8 +177,12 @@ const authProtectedRoutes = [
 	{ path: "/procedimentos", component: Procedimentos },
 	{ path: "/suporte", component: Suporte },
 
+	{ path: "/hemocomponentes", component: Hemocomponentes },
 
-	// this route should be at the end of all other routes
+	{ path: "/cuidados-especiais", component: CuidadosEspeciais },
+
+	{ path: "/reacoes-transfusional", component: ReacoesTransfusionais },
+
 	{ path: "/", exact: true, component: () => <Redirect to="/login" /> }
 ];
 

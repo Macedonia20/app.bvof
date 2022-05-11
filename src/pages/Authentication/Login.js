@@ -131,7 +131,7 @@ class Login extends Component {
                                                     </div>
 
                                                     <div className="mt-5 text-center">
-                                                        {/* <p>Não tem uma conta? <Link to="/cadastro" className="fw-medium text-primary"> Cadastrar </Link> </p> */}
+                                                        <p>Não tem uma conta? <Link to="/cadastro" className="fw-medium text-primary"> Cadastrar </Link> </p>
                                                         <p>{new Date().getFullYear()} © Wiara Tecnologia.</p>
                                                     </div>
                                                 </div>

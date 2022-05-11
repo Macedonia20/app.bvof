@@ -18,7 +18,7 @@ import './style.css';
 import api from '../../services/api';
 
 // import images
-import logodark from "../../assets/images/logo-qgr.png";
+import logodark from "../../assets/images/bvof-preto.png";
 
 class CadastroMembros extends Component {
     constructor(props) {

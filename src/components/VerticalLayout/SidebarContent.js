@@ -110,33 +110,24 @@ class SidebarContent extends Component {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/#" className="has-arrow waves-effect">
+                            <Link className="has-arrow waves-effect" to="/#">
                                 <i className="ri-drop-fill"></i>
                                 <span className="ms-1">Hemoterapia</span>
                             </Link>
                             <ul className="sub-menu">
                                 <li>
-                                    <Link
-                                        to="/hemoterapia-coleta"
-                                    >
-                                        Coleta de células tronco hematopoéticas
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        to="/hemoterapia-cuidados"
-                                    >
-                                        Cuidados Especiais
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/hemoterapia-hemocomponentes">
+                                    <Link to="/hemocomponentes?q=Hemocomponentes">
                                         Hemocomponentes
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/hemoterapia-reacoes">
-                                        Reações Transfusionais
+                                    <Link to="/cuidados-especiais?q=CuidadosEspeciais">
+                                        Cuidados Especiais
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/Reacoes-Transfusional?q=ReacoesTransfusional">
+                                        Reações Transfusional
                                     </Link>
                                 </li>
                             </ul>

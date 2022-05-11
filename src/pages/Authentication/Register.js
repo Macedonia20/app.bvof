@@ -18,7 +18,7 @@ import './style.css';
 import api from '../../services/api';
 
 // import images
-import logodark from "../../assets/images/logo-qgr.png";
+import logodark from "../../assets/images/bvof-preto.png";
 
 class Register extends Component {
     constructor(props) {
@@ -42,7 +42,8 @@ class Register extends Component {
             await api.post('/usuarios', {
                 nome: this.state.nome,
                 email: this.state.email,
-                senha: this.state.password
+                senha: this.state.password,
+                tipo: 'U'
             }).then(() => {
                 window.location.href = "/login?cadastroSucesso";
             });
