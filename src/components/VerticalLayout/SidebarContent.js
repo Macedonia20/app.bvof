@@ -130,6 +130,25 @@ class SidebarContent extends Component {
                                         Reações Transfusional
                                     </Link>
                                 </li>
+                                <li>
+
+                                <Link className="has-arrow waves-effect" to="/#">
+                                
+                                    <span className="ms-1"><strong>Coleta de células tronco hematopoéticas</strong></span>
+                                </Link>
+                                <ul className="sub-menu">
+                                <li>
+                                        <Link to="/mobilizacao?q=mobilizacao">
+                                        Mobilização
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/coleta-celulas-medula-ossea?q=coleta-celulas-medula-ossea">
+                                        Coleta de células da medula óssea
+                                        </Link>
+                                    </li>
+                                </ul>
+                                </li>
                             </ul>
                         </li>
                         <li>
