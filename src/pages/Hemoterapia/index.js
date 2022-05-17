@@ -1,97 +1,101 @@
-import React, { Component } from "react"
-import { Row, Col, Card, Container, CardHeader } from "reactstrap";
+
+import React, { Component } from "react";
+
+import { Col, Row, Card, CardHeader, Container, Table } from "reactstrap";
+
 import { Link } from "react-router-dom";
 
-import api from '../../services/api';
-
 //Import Breadcrumb
-import Breadcrumbs from "../../components/Common/Breadcrumb"
+import Breadcrumbs from '../../components/Common/Breadcrumb';
 
-class Hemoterapia extends Component {
+class Dashboard extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      breadcrumbItems: [
-        { title: "Menu", link: "/dashboard" },
-        { title: "Hemoterapia", link: "#" },
-      ],
-      page: 1,
-      sizePerPage: 10,
-      productData: [],
-      visible: false,
-      modal_standard: false,
-      modal_apagar: false,
-      filtro: ''
+        breadcrumbItems : [
+            // { title : "QGR", link : "/" },
+            // { title : "Home", link : "/dashboard" },
+        ],
     }
-  };
-
-  async buscarDados() {
-    const options = this.getOptions();
-    const { data } = await api.get(`/hemoterapia/categorias`, options);
-
-    this.setState({
-      productData: data
-    });
-  }
-
-  pesquisar() {
-    const valorPesquisa = this.getValueId('valorPesquisar');
-    
-    if (document.getElementsByClassName("page-link").length > 0) {
-      document.getElementsByClassName("page-link")[0].click();
-    }
-    
-    this.setState({
-      filtro: valorPesquisa
-    });
-    this.buscarDados();
-  }
-
-  getOptions() {
-    let obj = '';
-    if (localStorage.getItem("authUser")) {
-      obj = JSON.parse(localStorage.getItem("authUser"));
-    }
-
-    const options = {
-      headers: {"Authorization" : `Bearer ${obj.token}`}
-    }
-
-    return options;
-  }
-
-  componentDidMount() {
-    this.buscarDados();
   }
 
   render() {
-
     return (
       <React.Fragment>
-          <div className="page-content">
-              <Container fluid>
+        <div className="page-content">
+          <h4>HEMOTERAPIA</h4>
+          <Container fluid>
 
-              <Breadcrumbs title="" breadcrumbItems={this.state.breadcrumbItems} />
-              <Row>
-                  {
-                    this.state.productData?.map((item, key) =>
-                      <Col lg={4} key={key}>
-                          <Link to={ `/hemoterapia-opcoes?q=${item.categorias}` } >
-                              <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
-                                  <CardHeader className="bg-transparent">
-                                      <h5 style={{ padding: '25px', color: '#4aa3ff' }}>{ item.categorias }</h5>
-                                  </CardHeader>
-                              </Card>
-                          </Link>
-                      </Col>
-                    )
-                  }
-              </Row>
-              </Container> 
-          </div>
+            <Breadcrumbs title="" breadcrumbItems={this.state.breadcrumbItems} />
+            <Row>
+              <Col lg={4} >
+            
+                <Link 
+                  to="/hemocomponentes?q=Hemocomponentes"
+                >
+                  <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
+                    <CardHeader className="bg-transparent">
+                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>HEMOCOMPONENTES</h5>
+                    </CardHeader>
+                  </Card>
+                </Link>
+                    
+              </Col>
+              <Col lg={4} >
+                <Link 
+                  to="/cuidados-especiais?q=CuidadosEspeciais"
+                >
+                  <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
+                    <CardHeader className="bg-transparent">
+                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>CUIDADOS ESPECIAIS</h5>
+                    </CardHeader>
+                  </Card>
+                </Link>
+              </Col>
+              <Col lg={4} >
+                <Link 
+                  to="/Reacoes-Transfusional?q=ReacoesTransfusional"
+                >
+                  <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
+                    <CardHeader className="bg-transparent">
+                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>REAÇOẼS TRANSFUNCIONAL</h5>
+                    </CardHeader>
+                  </Card>
+                </Link>
+              </Col>
+            </Row>
+            <Row>
+            <h4>COLETA DE CÉLULAS TRONCO HEMATOPOÉTICAS</h4>
+            <Container fluid>
+              <Col lg={4} >
+                <Link 
+                  to="/mobilizacao?q=mobilizacao"
+                >
+                  <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
+                    <CardHeader className="bg-transparent">
+                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>MOBILIZAÇÃO</h5>
+                    </CardHeader>
+                  </Card>
+                </Link>
+              </Col>
+              <Col lg={4} >
+                <Link 
+                  to="/coleta-celulas-medula-ossea?q=coleta-celulas-medula-ossea"
+                >
+                  <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
+                    <CardHeader className="bg-transparent">
+                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>COLETA CÉLULAS DA MEDULA ÓSSEA</h5>
+                    </CardHeader>
+                  </Card>
+                </Link>
+              </Col>
+              </Container>
+            </Row>
+          </Container> 
+        </div>
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default Hemoterapia;
+export default Dashboard;

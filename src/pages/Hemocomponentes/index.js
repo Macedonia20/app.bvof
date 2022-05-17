@@ -12,7 +12,7 @@ class Hemocomponentes extends Component {
     super(props)
     this.state = {
       breadcrumbItems: [
-        { title: "Drogas", link: "/drogas" },
+        { title: "Menu", link: "/dashboard" },
         { title: "Detalhes", link: "#" },
       ],
       page: 1,
@@ -217,60 +217,6 @@ class Hemocomponentes extends Component {
                   <Label className="form-label">Considerações especiais: <span style={{ fontWeight: 300 }}>{this.format(this.state.consideracoes)}</span></Label>
                 </Row>
               </>) : (<></>)}
-              
-              {/* {this.state.meia_vida ? (<>
-                <Row className="mb-3">
-                  <Label className="form-label">Meia vida: <span style={{ fontWeight: 300 }}>{this.format(this.state.meia_vida)}</span></Label>
-                </Row>
-              </>) : (<></>)}
-              
-              {this.state.contraindicacao ? (<>
-                <Row className="mb-3">
-                  <Label className="form-label">Contraindicação: <span style={{ fontWeight: 300 }}>{this.format(this.state.contraindicacao)}</span></Label>
-                </Row>
-              </>) : (<></>)}
-              
-              {this.state.carcinogenese ? (<>
-                <Row className="mb-3">
-                  <Label className="form-label">Carcinogênese: <span style={{ fontWeight: 300 }}>{this.format(this.state.carcinogenese)}</span></Label>
-                </Row>
-              </>) : (<></>)}
-              
-              {this.state.impacto ? (<>
-                <Row className="mb-3">
-                  <Label className="form-label">Impacto na fertilidade: <span style={{ fontWeight: 300 }}>{this.format(this.state.impacto)}</span></Label>
-                </Row>
-              </>) : (<></>)}
-              
-              {this.state.principais ? (<>
-                <Row className="mb-3">
-                  <Label className="form-label">Principais efeitos adversos: <span style={{ fontWeight: 300 }}>{this.format(this.state.principais)}</span></Label>
-                </Row>
-              </>) : (<></>)}
-              
-              {this.state.tratamento ? (<>
-                    <Row className="mb-3">
-                      <Label className="form-label">Tratamento da toxicidade: <span style={{ fontWeight: 300 }}>{this.format(this.state.tratamento)}</span></Label>
-                    </Row>
-              </>) : (<></>)}
-
-              {this.state.interacao ? (<>
-                <Row className="mb-3">
-                  <Label className="form-label">Interação: <span style={{ fontWeight: 300 }}>{this.format(this.state.interacao)}</span></Label>
-                </Row>
-              </>) : (<></>)}
-
-              {this.state.consideracoes ? (<>
-                <Row className="mb-3">
-                  <Label className="form-label">Considerações especiais: <span style={{ fontWeight: 300 }}>{this.format(this.state.consideracoes)}</span></Label>
-                </Row>
-              </>) : (<></>)}
-
-              {this.state.hidratacao ? (<>
-                <Row className="mb-3">
-                  <Label className="form-label">Hidratação: <span style={{ fontWeight: 300 }}>{this.format(this.state.hidratacao)}</span></Label>
-                </Row>
-              </>) : (<></>)} */}
               
             </ModalBody>
             <ModalFooter>

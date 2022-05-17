@@ -58,7 +58,7 @@ class Dashboard extends Component {
                         <Col mg={6} xl={3}>
                             <Card style={{ borderRadius: '25px' }}>
                                 <Link 
-                                    to="#"
+                                    to="/hemoterapia"
                                 >
                                     <CardImg top className="img-fluid" src={imgSuporteHemoterapico} alt="Suporte Hemoterápico" style={{ borderRadius: '25px' }}/>
                                 </Link>

@@ -12,7 +12,7 @@ class Mobilizacao extends Component {
     super(props)
     this.state = {
       breadcrumbItems: [
-        { title: "Drogas", link: "/drogas" },
+        { title: "Menu", link: "/dashboard" },
         { title: "Detalhes", link: "#" },
       ],
       page: 1,
