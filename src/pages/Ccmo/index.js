@@ -125,7 +125,7 @@ class coletaCelula extends Component {
           <div className="page-content">
               <Container fluid>
 
-              <Breadcrumbs title={this.state.filtro} breadcrumbItems={this.state.breadcrumbItems} />
+              <Breadcrumbs title={''} breadcrumbItems={this.state.breadcrumbItems} />
               <Row>
                   {
                     this.state.productData?.map(item =>
