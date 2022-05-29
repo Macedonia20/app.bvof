@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.a38ba8d2.chunk.css",
-    "main.js": "/static/js/main.45960836.chunk.js",
-    "main.js.map": "/static/js/main.45960836.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.7a1e0eef.js",
-    "runtime-main.js.map": "/static/js/runtime-main.7a1e0eef.js.map",
+    "main.js": "/static/js/main.95479f9c.chunk.js",
+    "main.js.map": "/static/js/main.95479f9c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.14ed789d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.14ed789d.js.map",
     "static/css/2.300abdb0.chunk.css": "/static/css/2.300abdb0.chunk.css",
-    "static/js/2.08d1a1be.chunk.js": "/static/js/2.08d1a1be.chunk.js",
-    "static/js/2.08d1a1be.chunk.js.map": "/static/js/2.08d1a1be.chunk.js.map",
+    "static/js/2.664ca40d.chunk.js": "/static/js/2.664ca40d.chunk.js",
+    "static/js/2.664ca40d.chunk.js.map": "/static/js/2.664ca40d.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.300abdb0.chunk.css.map": "/static/css/2.300abdb0.chunk.css.map",
     "static/css/main.a38ba8d2.chunk.css.map": "/static/css/main.a38ba8d2.chunk.css.map",
-    "static/js/2.08d1a1be.chunk.js.LICENSE.txt": "/static/js/2.08d1a1be.chunk.js.LICENSE.txt",
+    "static/js/2.664ca40d.chunk.js.LICENSE.txt": "/static/js/2.664ca40d.chunk.js.LICENSE.txt",
     "static/media/amgen.3ee0e15f.png": "/static/media/amgen.3ee0e15f.png",
     "static/media/appdrogas.b1ffc792.png": "/static/media/appdrogas.b1ffc792.png",
     "static/media/appprotocolos.e404ecf1.png": "/static/media/appprotocolos.e404ecf1.png",
@@ -59,10 +59,10 @@
     "static/media/takeda.b76844ec.png": "/static/media/takeda.b76844ec.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7a1e0eef.js",
+    "static/js/runtime-main.14ed789d.js",
     "static/css/2.300abdb0.chunk.css",
-    "static/js/2.08d1a1be.chunk.js",
+    "static/js/2.664ca40d.chunk.js",
     "static/css/main.a38ba8d2.chunk.css",
-    "static/js/main.45960836.chunk.js"
+    "static/js/main.95479f9c.chunk.js"
   ]
 }
