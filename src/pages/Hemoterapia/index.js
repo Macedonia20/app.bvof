@@ -23,10 +23,9 @@ class Dashboard extends Component {
     return (
       <React.Fragment>
         <div className="page-content">
-          <h4>HEMOTERAPIA</h4>
           <Container fluid>
-
             <Breadcrumbs title="" breadcrumbItems={this.state.breadcrumbItems} />
+            <h4>Hemoterapia</h4>
             <Row>
               <Col lg={4} >
             
@@ -35,7 +34,7 @@ class Dashboard extends Component {
                 >
                   <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
                     <CardHeader className="bg-transparent">
-                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>HEMOCOMPONENTES</h5>
+                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>Hemocomponeentes</h5>
                     </CardHeader>
                   </Card>
                 </Link>
@@ -47,7 +46,7 @@ class Dashboard extends Component {
                 >
                   <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
                     <CardHeader className="bg-transparent">
-                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>CUIDADOS ESPECIAIS</h5>
+                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>Cuidados Especiais</h5>
                     </CardHeader>
                   </Card>
                 </Link>
@@ -58,22 +57,23 @@ class Dashboard extends Component {
                 >
                   <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
                     <CardHeader className="bg-transparent">
-                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>REAÇOẼS TRANSFUNCIONAL</h5>
+                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>Reações transfusionais</h5>
                     </CardHeader>
                   </Card>
                 </Link>
               </Col>
             </Row>
             <Row>
-            <h4>COLETA DE CÉLULAS TRONCO HEMATOPOÉTICAS</h4>
-            <Container fluid>
+            <h4>Coleta dee células tronco Hematopoéticas</h4>
+            <Container>
+              <Row>
               <Col lg={4} >
                 <Link 
                   to="/mobilizacao?q=mobilizacao"
                 >
                   <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
                     <CardHeader className="bg-transparent">
-                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>MOBILIZAÇÃO</h5>
+                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>Mobilização</h5>
                     </CardHeader>
                   </Card>
                 </Link>
@@ -84,12 +84,13 @@ class Dashboard extends Component {
                 >
                   <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
                     <CardHeader className="bg-transparent">
-                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>COLETA CÉLULAS DA MEDULA ÓSSEA</h5>
+                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>Coleta de células da medula óssea</h5>
                     </CardHeader>
                   </Card>
                 </Link>
               </Col>
-              </Container>
+              </Row>
+            </Container>
             </Row>
           </Container> 
         </div>

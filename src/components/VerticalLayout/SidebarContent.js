@@ -127,7 +127,7 @@ class SidebarContent extends Component {
                                 </li>
                                 <li>
                                     <Link to="/Reacoes-Transfusional?q=ReacoesTransfusional">
-                                        Reações Transfusional
+                                        Reações Transfusionais
                                     </Link>
                                 </li>
                                 <li>
