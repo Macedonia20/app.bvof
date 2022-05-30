@@ -34,7 +34,7 @@ class Dashboard extends Component {
                 >
                   <Card outline color="info" className="border" style={{ borderRadius: '25px' }}>
                     <CardHeader className="bg-transparent">
-                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>Hemocomponeentes</h5>
+                        <h5 style={{ padding: '25px', color: '#4aa3ff' }}>Hemocomponentes</h5>
                     </CardHeader>
                   </Card>
                 </Link>
